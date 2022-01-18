@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+//import ProtectedContext from './components/context/Protected';
+import {BrowserRouter} from "react-router-dom";
+import Home from './views/Home';
+import Index from "./views/Index"
+import Navigation from './components/Navigation';
+import Main from './views/Main'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        {/*<Navigation />
+        <Main />*/}
+      <App/>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

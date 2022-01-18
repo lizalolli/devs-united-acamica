@@ -1,7 +1,7 @@
 import React from 'react'
-import {auth, LoginGoogle, logout} from './firebase'
+import {auth, logout} from './firebase'
 
-const LoginGoogle = () => {
+const LoginGooglee = () => {
     return (
         <div>
             
@@ -10,4 +10,4 @@ const LoginGoogle = () => {
 }
 
 
-export default Google
+export default LoginGooglee
