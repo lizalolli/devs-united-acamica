@@ -1,0 +1,19 @@
+/*fuente google*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+    background-color: #2E132C;
+}
+
+/*INDEX*/
+.index h1{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color:#F50D5A;
+}
+
+.index h1 strong{
+    color:#FFFFFF;
+}
+
+/*TWEETS*/

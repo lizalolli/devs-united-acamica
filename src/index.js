@@ -8,14 +8,16 @@ import {BrowserRouter} from "react-router-dom";
 import Home from './views/Home';
 import Index from "./views/Index"
 import Navigation from './components/Navigation';
-import Main from './views/Main'
+import Login from './components/Login';
+import Main from './components/Main'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
         {/*<Navigation />
-        <Main />*/}
-      <App/>
+        <Main />
+      <Navigation />*/}
+      <Main/>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

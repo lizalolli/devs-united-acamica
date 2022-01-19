@@ -1,18 +1,19 @@
 import {useEffect , useState, useRef, fragment} from 'react';
 import './App.css';
-//import './styles.css';
-//import Register from './components/Register'
-//import Login from './components/Login'
+import './styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/Login'
+import Navigation from './components/Navigation'
+import Main from './components/Main'
+import Index from './views/Index'
 import {firestore , storage , auth , loginConGoogle , logout} from './firebase';
-//import ProtectedContext from './components/context/Protected';
-//import {useProtectedContext} from './components/context/Protected';
 import React from "react";
 
 function App() {
 
   const [tweets,setTweets] = useState ([
   ]);
-
+ 
   const [tweetFromApp, setTweetFromApp] = useState ({
     tweet:"",
     user:"",
@@ -77,12 +78,6 @@ function App() {
 
     //borra el tweet
     const deleteTweet = (id) => {
-      /*const newsTweets = tweets.filter((tweet) => {
-        return tweet.id !== id;
-      });
-      setTweets(newsTweets);
-      firestore.doc(`tweets/${id}`).delete(); */
-      //no está borrando en firestore
       firestore.doc(`tweetsColection/${id}`)
      .delete()
      .then(()=> console.log("borrado exitosamente"))
@@ -92,7 +87,7 @@ function App() {
     //da like al tweet
     const likeTweet = (id, likes) => {  
       if (!likes) likes= 0;
-      firestore.doc(`tweetsColection/${id}`).update({likes: +1});
+      firestore.doc(`tweetsColection/${id}`).update({likes: likes+1});
     }
 
     return (
@@ -103,11 +98,11 @@ function App() {
           <div className="user-profile">
             <img className="user-profile-pic" src={user.photoURL} alt=""/>
             <p>¡Hola {user.displayName}!</p>
-            <button onClick={logout}>Log out</button>
           </div>
           </>  
       ) : (
-        <button className="login-btn" onClick={loginConGoogle}>Log in</button>
+        <>
+        </>
       )}
       <form action="">
         <textarea 
