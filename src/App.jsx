@@ -21,7 +21,7 @@ function App() {
   });
 
   const [user , setUser] = useState(null);
-
+  
     useEffect(() => {
       //firestore
       const desuscbribir = firestore
