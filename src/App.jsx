@@ -71,10 +71,10 @@ function App() {
           user: doc.data().user,
           id:doc.id
         }
-        setTweets([newTweet,...tweets])
+        setTweets([newTweet,...tweets] )
       })
     }
-
+ 
     //borra el tweet
     const deleteTweet = (id) => {
       /*const newsTweets = tweets.filter((tweet) => {
