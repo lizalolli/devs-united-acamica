@@ -35,14 +35,16 @@ function App() {
             id:doc.id,
             likes:doc.data().likes,
             email: doc.data().email,
-            uid:doc.data().uid
+            uid:doc.data().uid,
+            likedBy: doc.data().likedBy
           };
         });
       setTweets(tweets);  
       });
+
       auth.onAuthStateChanged((user) => {
         setUser(user);
-        console.log(user);
+        //console.log(user);
       });
       return () => desuscbribir();
      },[]);
@@ -54,7 +56,8 @@ function App() {
       tweet: e.target.value,
       uid: user.uid,
       email: user.email,
-      user:user.displayName
+      user:user.displayName,
+      likedBy: []
       };
       setTweetFromApp(newTweet);
     };
@@ -62,7 +65,7 @@ function App() {
     //envía el tweet
     const sendTweet = (e) => {
       e.preventDefault();
-      let enviarTweet = firestore.collection("tweetsColection").add(tweetFromApp);
+      /*let enviarTweet = firestore.collection("tweetsColection").add(tweetFromApp);
       let solicitarDocumento = enviarTweet.then((docRef) => {
         return docRef.get(); //devuelve una promesa
       });
@@ -73,7 +76,8 @@ function App() {
           id:doc.id
         }
         setTweets([newTweet,...tweets])
-      })
+      })*/
+      firestore.collection("tweetsColection").add(tweetFromApp);
     }
 
     //borra el tweet
@@ -85,9 +89,54 @@ function App() {
     }
 
     //da like al tweet
-    const likeTweet = (id, likes) => {  
-      if (!likes) likes= 0;
-      firestore.doc(`tweetsColection/${id}`).update({likes: likes+1});
+    const likeTweet = (id, likes, uid, likedBy) => {  
+      /*if (!likes) likes= 0;
+      firestore.doc(`tweetsColection/${id}`).update({likes: likes+1});*/
+      let newLikedBy = [...likedBy, uid];
+      firestore.doc(`tweetsColection/${id}`).update({likedBy: newLikedBy});
+    }
+
+    //quita el like al tweet
+    const dislikeTweet = (id, uid, likedBy) => {
+      let newNewLikedBy = likedBy.filter((userUid) => uid !== userUid);
+      firestore.doc(`tweetsColection/${id}`).update({ likedBy: newNewLikedBy });
+    }
+
+    //mostrar like
+    const showLike = (likersList, id, likes) => {
+      if (likersList && user){
+        const youLiked = likersList.findIndex((liker) => user.uid === liker);
+        //si la persona no le ha dado like
+        if (youLiked < 0){
+          return (
+            <>
+            <span onClick={() => likeTweet(id, likes, user.uid, likersList)} className="likes">
+              <span>like</span>
+              <span>{likersList.length}</span>
+            </span>
+            </>
+          );
+        } else {
+        //si la persona le dio like
+          return (
+            <>
+              <span onClick={() => dislikeTweet(id, user.uid, likersList)} className="likes">
+                <span>dislike</span>
+                <span>{likersList.length}</span>
+              </span>
+            </>
+          );
+        }
+      } else {
+        return(
+          <>
+            <span onClick={() => likeTweet(id, likes, user.id, likersList)} className="likes">
+              <span>  <strong>not loged</strong></span>
+              <span>{likes ? likes : 0}</span>
+            </span>
+          </>
+        );
+      }
     }
 
     return (
@@ -124,8 +173,9 @@ function App() {
             </h3>
             <p className="tweet-autor">por: {tweet.user}</p>
             <p className="tweet-autor">{tweet.email}</p>
-            <span className="likes" onClick={ () => likeTweet(tweet.id, tweet.likes)}>likes</span>
-            <span>{tweet.likes ? tweet.likes : 0}</span>
+            {/*<span className="likes" onClick={ () => likeTweet(tweet.id, tweet.likes)}>likes</span>*/}
+            {/*<span>{tweet.likes ? tweet.likes : 0}</span>*/}
+            {showLike(tweet.likedBy, tweet.id, tweet.likes)}
           </div>
         )
       })}
