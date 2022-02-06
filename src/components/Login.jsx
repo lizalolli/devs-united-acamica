@@ -8,7 +8,6 @@ const Login = (props) => {
 
     return (
         <div>
-            <p>hola, esto es el login</p>
             <button className="login-btn" onClick={loginConGoogle}>Log in</button>        
             {/*<div className="user-profile">
                 <img className="user-profile-pic" src={props.user.photoURL} alt=""/>

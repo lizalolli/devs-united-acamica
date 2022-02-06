@@ -8,6 +8,8 @@ import Main from './components/Main'
 import Index from './views/Index'
 import {firestore , storage , auth , loginConGoogle , logout} from './firebase';
 import React from "react";
+import {BrowserRouter} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 function App() {
 
@@ -65,18 +67,6 @@ function App() {
     //envía el tweet
     const sendTweet = (e) => {
       e.preventDefault();
-      /*let enviarTweet = firestore.collection("tweetsColection").add(tweetFromApp);
-      let solicitarDocumento = enviarTweet.then((docRef) => {
-        return docRef.get(); //devuelve una promesa
-      });
-      solicitarDocumento.then((doc) => {
-        let newTweet = {
-          tweet: doc.data().tweet,
-          user: doc.data().user,
-          id:doc.id
-        }
-        setTweets([newTweet,...tweets])
-      })*/
       firestore.collection("tweetsColection").add(tweetFromApp);
     }
 
@@ -90,8 +80,6 @@ function App() {
 
     //da like al tweet
     const likeTweet = (id, likes, uid, likedBy) => {  
-      /*if (!likes) likes= 0;
-      firestore.doc(`tweetsColection/${id}`).update({likes: likes+1});*/
       let newLikedBy = [...likedBy, uid];
       firestore.doc(`tweetsColection/${id}`).update({likedBy: newLikedBy});
     }
@@ -139,7 +127,10 @@ function App() {
       }
     }
 
+    //if (user) return <Navigate to='/App'/>
+
     return (
+
     <div className="App">
       <h1>Dev United</h1>
       {user ? (
@@ -181,6 +172,7 @@ function App() {
       })}
     </div>
   );
+
 }
 
 export default App;
