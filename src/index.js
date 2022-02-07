@@ -1,4 +1,5 @@
 import React from 'react';
+import { createContext, useContext } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -6,19 +7,19 @@ import reportWebVitals from './reportWebVitals';
 //import ProtectedContext from './components/context/Protected';
 import {BrowserRouter} from "react-router-dom";
 import Home from './views/Home';
-import Index from "./views/Index"
 import Navigation from './components/Navigation';
-import Login from './components/Login';
+import Login from './views/Login';
 import Main from './components/Main'
+import {AppContext} from "./context/AppContext";
+import AppProvider from './context/AppContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-        {/*<Navigation />
-        <Main />
-      <Navigation />*/}
-      <Main/>
-    </BrowserRouter>
+    <AppProvider>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

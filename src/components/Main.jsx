@@ -1,26 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from './Login'
-import App from '../App'
+import Login from '../views/Login'
 import Home from '../views/Home'
-import Index from '../views/Index'
 import Navigation from '../components/Navigation';
+import Tweets from '../views/Tweets';
+import Profile from '../views/Profile'
 
 const Main = () => {
     return (
         <div>
-            <Navigation/>
             <Routes>
-                {/*<Navigation/>*/}
-                <Route exact path="/" element={<Index/>} />
-                <Route path="/App" element={<App/>} />
-                <Route path="/Login" element={<Login/>} />
-                <Route path="/Home" element={<Home/>} />
+                <Route exact path="/" element={<Home />} />
+                <Route path="/Login" element={<Login />} />
+                <Route path="/Profile" element={<Profile />} />
+                <Route path="/Tweets" element={<Tweets />} />
             </Routes>
         </div>
     );
 }
 
 export default Main
- 
