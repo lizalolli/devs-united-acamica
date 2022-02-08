@@ -6,7 +6,7 @@ const AddTweet = () => {
     const { tweetFromApp, handleChange, sendTweet } = useAppContext();
 
     return (
-        <div>
+        <div className="send-tweet">
             <form action="">
                 <textarea 
                 value={tweetFromApp.tweet} 
@@ -14,10 +14,11 @@ const AddTweet = () => {
                 id="" 
                 cols="30" 
                 rows="10" 
-                placeholder="escribe aquí tu tweet"
+                placeholder="What's happening?"
                 onChange={handleChange}></textarea>
-                <button onClick={sendTweet}>Enviar tweet</button>
+                <button onClick={sendTweet}>POST</button>
             </form>
+            <div className="progressbar">ola</div>
         </div>
     )
 }

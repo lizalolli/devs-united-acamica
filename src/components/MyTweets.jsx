@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Favorites = () => {
+const MyTweets = () => {
     return (
         <div className="container-tweets">
-            <p>Estos son mis tweeets favoritos</p>
+            <p>estos son mis tweets</p>
         </div>
     )
 }
 
-export default Favorites
+export default MyTweets

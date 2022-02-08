@@ -107,8 +107,8 @@ const AppProvider = ({ children }) => {
         return (
           <>
             <span onClick={() => dislikeTweet(id, user.uid, likersList)} className="likes">
-              <img src="./images/likeon.svg" alt=""/>
-              <span>{likersList.length}</span>
+              <img className="like" src="./images/likeon.svg" alt=""/>
+              <span className="likeon">{likersList.length}</span>
             </span>
           </>
         );
@@ -117,7 +117,7 @@ const AppProvider = ({ children }) => {
       return (
         <>
           <span onClick={() => likeTweet(id, likes, user.id, likersList)} className="likes">
-            <img src="./images/likeoff.svg" alt=""/>
+            <img className="like" src="./images/likeoff.svg" alt=""/>
             <span>{likes ? likes : 0}</span>
           </span>
         </>

@@ -1,0 +1,89 @@
+.container-background{
+    width:100wh;
+    background-color:#150714;
+}
+
+.container-background-tweets{
+    border-top: 2px solid #60265B;
+    background-color: #2F112D;
+}
+
+.container-post-tweet .tweet{
+    display:flex;
+    padding-top: 20px;
+}
+
+.container-post-tweet img.user-profile-pic{
+    width: 56px;
+    border-radius: 56px;
+    margin-right:20px;
+}
+
+.container-post-tweet .send-tweet textarea{
+    color:#914D8B !important;
+    background-color: #2F112D;
+    border:none;
+    height:113px;
+    width:100%;
+    padding: 5px 7px;
+    font-size:20px;
+}
+
+.container-post-tweet .send-tweet textarea::placeholder{
+    color:#914D8B !important;
+    font-size:20px;
+}
+
+.container-post-tweet .send-tweet {
+    width: 100%;
+}
+
+.container-post-tweet .send-tweet button{
+    float:right;
+    margin-top:30px;
+    margin-bottom:30px;
+    background-color: #2F112D;  
+    border:none;
+    font-family: 'Press Start 2P', 'Silkscreen' cursive;
+    padding:10px 20px; 
+    font-size: 20px; 
+}
+
+.container-post-tweet .send-tweet button:hover{
+    background-color: #914D8B ;  
+}
+
+.tweet-list-item{
+    padding-top:30px;
+    padding-bottom:30px;
+    border-bottom: 2px solid #60265B;
+}
+
+.tweet-list-item:last-child{
+    border-bottom: none;
+}
+
+.tweet-list-item .delete{
+    float:right;
+}
+
+.tweet-list-item .username{
+    margin-bottom:20px;
+}
+
+.tweet-list-item .username h4.tweet-autor{
+background: #FFEA5C;
+display: inline;
+padding:5px;
+border-radius: 0px 0px 0px 5px
+}
+
+.likes img{
+    width:24px;
+    margin-right: 6px;
+}
+
+.likes span.likeon{
+    color: #F50D5A;
+}
+

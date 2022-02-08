@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from '../views/Login'
 import Home from '../views/Home'
-import Navigation from '../components/Navigation';
+import Navigation from './HeaderTweets';
 import Tweets from '../views/Tweets';
 import Profile from '../views/Profile'
 

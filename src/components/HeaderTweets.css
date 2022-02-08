@@ -1,0 +1,13 @@
+nav.main-nav {
+    background-color:#2F112D;
+}
+
+nav.main-nav img.user-img{
+    width: 33px;
+    border-radius: 33px;
+}
+
+.container-tweets-nav{
+    width: 45%;
+    margin: 0 auto;
+}

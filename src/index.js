@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 //import ProtectedContext from './components/context/Protected';
 import {BrowserRouter} from "react-router-dom";
 import Home from './views/Home';
-import Navigation from './components/Navigation';
+import HeaderTweets from './components/HeaderTweets';
 import Login from './views/Login';
 import Main from './components/Main'
 import {AppContext} from "./context/AppContext";
