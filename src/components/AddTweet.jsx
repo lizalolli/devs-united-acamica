@@ -1,9 +1,11 @@
-import React from 'react'
+import React , { useState }from 'react'
 import {AppContext , useAppContext} from "../context/AppContext";
 
 const AddTweet = () => {
 
     const { tweetFromApp, handleChange, sendTweet } = useAppContext();
+
+    const [progress, setProgress] = useState(0);
 
     return (
         <div className="send-tweet">
@@ -12,13 +14,18 @@ const AddTweet = () => {
                 value={tweetFromApp.tweet} 
                 name="tweet" 
                 id="" 
-                cols="30" 
-                rows="10" 
+                maxLength="200"
                 placeholder="What's happening?"
                 onChange={handleChange}></textarea>
-                <button onClick={sendTweet}>POST</button>
+                <div className="progressbar">
+                    <span>progressbar</span>
+                    <div className="characters-used">
+                        <p className="izq">cantidad de letras usadas</p> 
+                        <p className="der">200 max.</p>
+                    </div>
+                </div>
+                <button className="post" onClick={sendTweet}>POST</button>
             </form>
-            <div className="progressbar">ola</div>
         </div>
     )
 }

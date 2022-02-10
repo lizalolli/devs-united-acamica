@@ -9,11 +9,6 @@ const Home = () => {
 
     const { user,setUser } = useAppContext();
 
-    const logout = () => {
-      auth.signOut();
-      setUser(null);
-    };
-
     return (
         <div>
             {user?.displayName ? <Navigate to="/Tweets" /> : <Login />}

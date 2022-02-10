@@ -1,34 +1,43 @@
 /*fuente google*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;600;700&display=swap');
+
+/*fuente local*/
+@font-face {
+    font-family: 'Silkscreen';
+    src: local('Silkscreen'), url(./fonts/Silkscreen/slkscr.ttf) format('truetype');
+  }
 
 body{
     background: #2E132C !important;
     color: #fff !important;
+    font-family: 'Fira Code', monospace;
 }
 
 h1{
-    font-size:40px;
+    font-size:60px;
     color: #fff;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Silkscreen';
+    font-weight: 700;
+}
+
+h3{
+    font-family: 'Silkscreen'; 
+    color:#2E132C;
+    font-size:20px; 
+    background-color: #FFEA5C;
 }
 
 h4{
-    font-family: 'Press Start 2P', cursive; 
+    font-family: 'Silkscreen'; 
     color:#2E132C;
-    font-size:15px;
+    font-size:18px;
+    padding:0px;
 }
 
 h5{ 
     color:#fff;
     font-size:24px;
-}
-
-.container-tweets{
-    width: 45%;
-    margin: 0 auto;
-}
-
-.container-tweets .app-nav{
 }
 
 nav{
@@ -52,53 +61,7 @@ nav ul li a, nav ul li button{
     border: none;
 }
 
-/*INDEX*/
-
-.index h1 strong{
-    color:#FFFFFF;
-}
-
-/*LOGIN*/
-
-.container-login{
-    width:80%;
-    height:100vh;
+.container-tweets{
+    width: 45%;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.container-login h1{
-    margin-bottom: 37px;
-}
-
-.container-login h5{
-    margin-bottom: 37px;
-    width: 80%;
-}
-
-.container-login .content-login button.btn-login{
-    background-color: #4285F4;
-    border-radius: 3px;
-    border:none;
-    padding: 3px 40px 3px 3px;
-    color:#fff;
-    margin-bottom:165px;
-}
-
-.container-login .content-login button.btn-login img{
-    background-color: #fff;
-    padding: 5px;
-    margin-right: 40px;
-}
-
-.container-login .content-login p{
-    color:#60265B;
-    text-align: center;
-    font-size:18px;
-}
-
-.container-login .content-login p span {
-    color:#F50D5A;
 }

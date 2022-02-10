@@ -22,3 +22,8 @@ nav.nav-profile ul button.username-back{
 nav.nav-profile ul button.username-back img{
     margin-right: 15px;
 }
+
+.container-background-profileTweets{
+    border-top: 2px solid white;
+    margin-top:0px
+}

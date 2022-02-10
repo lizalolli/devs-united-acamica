@@ -15,7 +15,8 @@ const Tweets = () => {
     const { user } = useAppContext();
 
     return (
-        <>  <HeaderTweets/>
+        <>  
+            <HeaderTweets/>
             <div className="container-background">
                 <div className="container-tweets">
                     <div className="container-post-tweet">

@@ -1,5 +1,7 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, fragment } from "react";
 import { firestore, auth } from "../firebase";
+import MyTweets from '../components/MyTweets'
+import Favorites from '../components/Favorites'
 
 export const AppContext = createContext();
 
@@ -9,6 +11,12 @@ export const useAppContext = () => {
 
 const AppProvider = ({ children }) => {
 
+  const [Active, setActive] = useState("false");
+
+  const handleToggle = () => {
+    setActive(!Active);
+  };
+
   const [tweets, setTweets] = useState([]);
 
   const [tweetFromApp, setTweetFromApp] = useState({
@@ -16,14 +24,24 @@ const AppProvider = ({ children }) => {
     user: "",
     uid: "",
     mail: "",
+    img:""
   });
 
   const [user, setUser] = useState(null);
+
+  const [img, setImg] = useState(null);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setUser(user);
       console.log(user);
+    });
+  }, []);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((img) => {
+      setImg(img);
+      console.log(img);
     });
   }, []);
 
@@ -40,8 +58,10 @@ const AppProvider = ({ children }) => {
             likes: doc.data().likes,
             email: doc.data().email,
             uid: doc.data().uid,
-            likedBy: doc.data().likedBy
+            likedBy: doc.data().likedBy,
+            img: doc.data().img
           };
+          
         });
         setTweets(tweets);
       });
@@ -57,7 +77,8 @@ const AppProvider = ({ children }) => {
       uid: user.uid,
       email: user.email,
       user: user.displayName,
-      likedBy: []
+      likedBy: [],
+      img:user.photoURL
     };
     setTweetFromApp(newTweet);
   };
@@ -70,10 +91,13 @@ const AppProvider = ({ children }) => {
 
   //borra el tweet
   const deleteTweet = (id) => {
+    var answer = window.confirm("Estás a punto de eliminar este tweeet, ¿deseas continuar?");
+    if (answer) {
     firestore.doc(`tweetsColection/${id}`)
       .delete()
       .then(() => console.log("borrado exitosamente"))
       .catch(() => console.log("algo salio mal"))
+    }
   }
 
   //da like al tweet
@@ -139,7 +163,12 @@ const AppProvider = ({ children }) => {
         deleteTweet,
         likeTweet,
         dislikeTweet,
-        showLike
+        showLike,
+        Active,
+        setActive,
+        handleToggle,
+        img,
+        setImg
       }}
     >
       {children}
