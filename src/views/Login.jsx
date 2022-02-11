@@ -7,7 +7,9 @@ const Login = () => {
 
     return (
         <div className="container-login">
-            <img src='./images/logobig.svg' />
+            <div className="img-login">
+                <img src='./images/logobig.svg' />
+            </div>
             <div className="content-login">
                 <h1>¡BIENVENID@!</h1>
                 <h5 className="intro-login">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>

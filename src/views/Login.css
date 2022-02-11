@@ -40,3 +40,15 @@
 .container-login .content-login p span {
     color:#F50D5A;
 }
+
+.img-login{
+    display: flex;
+    justify-content: end;
+    margin-right: 50px;
+}
+
+.img-login, .content-login{
+    width:50%;
+    margin-left: 50px;
+}
+

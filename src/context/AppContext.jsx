@@ -13,6 +13,11 @@ const AppProvider = ({ children }) => {
 
   const [Active, setActive] = useState("false");
 
+  const [textLength, setTextLength] = useState("0");
+
+  /* const textarea = document.getElementById("tweet-text").maxLength
+    setTextLength = textarea.maxLength*/
+
   const handleToggle = () => {
     setActive(!Active);
   };
@@ -48,7 +53,7 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     //firestore
     const desuscbribir = firestore
-      .collection('tweetsColection')
+      .collection('tweetsColection').orderBy("dateCreation","desc")
       .onSnapshot((snapshot) => {
         const tweets = snapshot.docs.map((doc) => {
           return {
@@ -59,7 +64,8 @@ const AppProvider = ({ children }) => {
             email: doc.data().email,
             uid: doc.data().uid,
             likedBy: doc.data().likedBy,
-            img: doc.data().img
+            img: doc.data().img,
+            dateCreation: doc.data().dateCreation,
           };
           
         });
@@ -71,8 +77,7 @@ const AppProvider = ({ children }) => {
 
   const handleChange = (e) => {
     let newTweet = {
-      //  ...tweetFromApp,
-      //  [e.target.name]: e.target.value
+      dateCreation: new Date(),//user.gettTimestamp().toDate().toString(),
       tweet: e.target.value,
       uid: user.uid,
       email: user.email,
@@ -87,6 +92,7 @@ const AppProvider = ({ children }) => {
   const sendTweet = (e) => {
     e.preventDefault();
     firestore.collection("tweetsColection").add(tweetFromApp);
+    setTweetFromApp({ ...tweetFromApp, tweet: "" });
   }
 
   //borra el tweet
@@ -168,7 +174,9 @@ const AppProvider = ({ children }) => {
         setActive,
         handleToggle,
         img,
-        setImg
+        setImg,
+        textLength,
+        setTextLength
       }}
     >
       {children}
