@@ -12,7 +12,7 @@ import Main from './components/Main'
 import Home from './views/Home'
  
 function App() {
-
+  
     return (
     <div className="App">
       <Main/>
