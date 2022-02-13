@@ -1,8 +1,7 @@
 import React from 'react'
 import {fragment} from 'react'
-import {AppContext , useAppContext} from "../context/AppContext";
-import { Navigate, Link } from "react-router-dom";
-
+import {useAppContext} from "../context/AppContext";
+import { Navigate } from "react-router-dom";
 import HeaderProfile from '../components/HeaderProfile'
 import MyTweets from '../components/MyTweets'
 import Favorites from '../components/Favorites'
@@ -10,12 +9,9 @@ import Favorites from '../components/Favorites'
 
 const Profile = () => {
 
-    const { user, handleToggle, Active, setActive, ActiveFav, handleToggleFav } = useAppContext();
+    const { user, handleToggle, Active } = useAppContext();
 
     if (!user) return (<Navigate to ="/"/>)
-
-    //const post = document.getElementById("post");
-    //const favorites = document.getElementById("favorites");
 
     return (
         <>

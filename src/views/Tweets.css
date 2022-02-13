@@ -42,7 +42,7 @@
     float:right;
     margin-top:30px;
     margin-bottom:30px;
-    background-color: #2F112D;  
+    background-color: #60265B;  
     border:none;
     font-family: 'Press Start 2P', cursive;
     padding:10px 20px; 
@@ -68,16 +68,21 @@
     float:right;
     cursor: pointer;
 }
+.info-user-container{
+    width: 100%;
+}
 
 .tweet-list-item .username{
     margin-bottom:20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .tweet-list-item .username h4.tweet-autor{
 background: #FFEA5C;
-display: inline;
+/* display: inline; */
 padding:5px;
-border-radius: 0px 0px 0px 5px
+border-radius: 0px 0px 0px 5px;
 }
 
 .likes img{
@@ -116,4 +121,42 @@ border-radius: 0px 0px 0px 5px
 .img-tweet-comment img.user-profile-pic-comment{
     width:56px;
     border-radius: 56px;
+}
+
+.progress {
+    display: flex;
+    height: 5px;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color:  #2E132C;
+    border-radius: 0px;
+    margin: 0px;
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #00DA76;
+    transition: width .4s ease;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 998px){
+    .container-tweets{
+        width: 90%;
+    }
+
+    nav.nav-profile ul button.username-back,  nav.nav-profile ul button.logout{
+        font-size: 12px !important;
+    }
+
+    .container-tweets-nav {
+        width: 90% !important;
+    }
 }

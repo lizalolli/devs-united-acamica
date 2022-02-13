@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { firestore, storage, auth, loginConGoogle, logout } from '../firebase';
 import { useAppContext } from "../context/AppContext";
 
 const HeaderTweets = () => {

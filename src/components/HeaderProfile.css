@@ -1,13 +1,13 @@
 nav.nav-profile ul button.logout{
     background-color:#F50D5A;
     color: #250C23;
-    font-size: 16px;
+    font-size: 20px !important; 
     padding: 6px 20px;
     display: flex;
     align-items: center;
-    font-family: 'Press Start 2P', cursive; 
+    font-weight: 700;
+    font-family: 'Silkscreen'; 
 }
-
 nav.nav-profile ul button.logout img{
     margin-left:8px;
 }

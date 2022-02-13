@@ -2,9 +2,6 @@
     width:80%;
     height:100vh;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .container-login h1{
@@ -33,7 +30,6 @@
 
 .container-login .content-login p{
     color:#60265B;
-    text-align: center;
     font-size:18px;
 }
 
@@ -41,14 +37,37 @@
     color:#F50D5A;
 }
 
-.img-login{
-    display: flex;
-    justify-content: end;
-    margin-right: 50px;
+.img-login img{
+    float: right;
+    padding-right: 20px;
 }
 
-.img-login, .content-login{
-    width:50%;
-    margin-left: 50px;
+.content-login{
+    padding-left: 20px;
+}
+
+ .img-login, .content-login{
+    margin-top:30vh;
+} 
+
+@media screen and (max-width: 998px){
+    .img-login, .content-login{
+        margin-top:10vh;
+        text-align: center;
+    }
+
+    .container-login h5 {
+        width:unset;
+    }
+
+    .img-login img{
+        float: unset;
+        padding-right:0px !important;
+        width: 70%;
+    }
+    
+    .content-login{
+        padding-left:0px !important;
+    }
 }
 

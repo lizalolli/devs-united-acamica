@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, fragment } from "react";
-import { firestore, auth } from "../firebase";
+import { firestore, auth} from "../firebase";
 import MyTweets from '../components/MyTweets'
 import Favorites from '../components/Favorites'
 
@@ -15,8 +15,10 @@ const AppProvider = ({ children }) => {
 
   const [textLength, setTextLength] = useState("0");
 
-  /* const textarea = document.getElementById("tweet-text").maxLength
-    setTextLength = textarea.maxLength*/
+  //para los colores hacer un estado q cuando sea true cambie el color según el que se escogió (switch case) cambiando la clase
+  //hay que crear un componente casi igual al login
+  //const [color, setColor] = useState(false)
+
 
   const handleToggle = () => {
     setActive(!Active);
@@ -39,16 +41,17 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setUser(user);
-      console.log(user);
     });
   }, []);
 
   useEffect(() => {
     auth.onAuthStateChanged((img) => {
       setImg(img);
-      console.log(img);
     });
   }, []);
+
+  //Date to timestamp
+  
 
   useEffect(() => {
     //firestore
@@ -86,6 +89,7 @@ const AppProvider = ({ children }) => {
       img:user.photoURL
     };
     setTweetFromApp(newTweet);
+    setTextLength(e.target.value.length);
   };
 
   //envía el tweet

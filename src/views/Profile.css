@@ -8,6 +8,7 @@
 .container-tweets.profile-info .profile-img img{
     width: 134px;
     border-radius: 143px;
+    border: 4px solid #FFEA5C;
 }
 
 .container-tweets.profile-info h3{
