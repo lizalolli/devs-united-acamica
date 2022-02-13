@@ -19,7 +19,7 @@ const TweetsList = () => {
                                 {/* <p className="tweet-date">{tweet.dateCreation}</p> */}
                                 <span onClick={() => deleteTweet(tweet.id)} className="delete">{user.uid === tweet.uid && (<img src="./images/delete.svg" alt=""/> )}</span>
                             </div>
-                            <p>{tweet.tweet}</p>
+                            <p className="text-break">{tweet.tweet}</p>
                             {showLike(tweet.likedBy, tweet.id, tweet.likes)}
                         </div>
                     </div>
