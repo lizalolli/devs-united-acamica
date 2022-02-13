@@ -1,0 +1,70 @@
+/*fuente google*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;600;700&display=swap');
+/*react bootstrap css*/
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/*fuente local*/
+@font-face {
+    font-family: 'Silkscreen';
+    src: local('Silkscreen'), url(./fonts/Silkscreen/slkscr.ttf) format('truetype');
+  }
+
+body{
+    background: #2E132C !important;
+    color: #fff !important;
+    font-family: 'Fira Code', monospace;
+}
+
+h1{
+    font-size:60px;
+    color: #fff;
+    font-family: 'Silkscreen';
+    font-weight: 700;
+}
+
+h3{
+    font-family: 'Silkscreen'; 
+    color:#2E132C;
+    font-size:20px; 
+    background-color: #FFEA5C;
+}
+
+h4{
+    font-family: 'Silkscreen'; 
+    color:#2E132C;
+    font-size:18px;
+    padding:0px;
+}
+
+h5{ 
+    color:#fff;
+    font-size:24px;
+}
+
+nav{
+    padding-top: 12px;
+    padding-bottom: 10px;
+    color:#fff;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px ;
+    margin:0px;
+    height: 50px;
+}
+
+nav ul li a, nav ul li button{
+    color:#fff;
+    background-color: transparent;
+    border: none;
+}
+
+.container-tweets{
+    width: 45%;
+    margin: 0 auto;
+}
