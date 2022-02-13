@@ -1,7 +1,13 @@
 import React from 'react'
 import { loginConGoogle } from '../firebase';
+//import { useAppContext } from "../context/AppContext";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
+
+    //const { user } = useAppContext();
+
+    //if (user) return <Navigate to ="/Home"/>
 
     return (
         <div className="container-login">

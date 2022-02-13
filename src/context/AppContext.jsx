@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, fragment } from "react";
 import { firestore, auth} from "../firebase";
-import MyTweets from '../components/MyTweets'
-import Favorites from '../components/Favorites'
 
 export const AppContext = createContext();
 
@@ -108,8 +106,8 @@ const AppProvider = ({ children }) => {
     if (answer) {
     firestore.doc(`tweetsColection/${id}`)
       .delete()
-      .then(() => console.log("borrado exitosamente"))
-      .catch(() => console.log("algo salio mal"))
+      //.then(() => console.log("borrado exitosamente"))
+      //.catch(() => console.log("algo salio mal"))
     }
   }
 
@@ -183,7 +181,7 @@ const AppProvider = ({ children }) => {
         img,
         setImg,
         textLength,
-        setTextLength
+        setTextLength, 
       }}
     >
       {children}

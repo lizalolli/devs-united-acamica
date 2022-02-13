@@ -1,6 +1,5 @@
 import React from 'react'
-import {AppContext , useAppContext} from "../context/AppContext";
-import TweetsList from './TweetsList'
+import {useAppContext} from "../context/AppContext";
 
 const MyTweets = () => {
 

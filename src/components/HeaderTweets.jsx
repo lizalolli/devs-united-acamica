@@ -4,7 +4,7 @@ import { useAppContext } from "../context/AppContext";
 
 const HeaderTweets = () => {
 
-  const { user } = useAppContext();
+  const { user, tweet } = useAppContext();
 
   return (
     <div className="app-nav">
