@@ -69,5 +69,9 @@
     .content-login{
         padding-left:0px !important;
     }
+
+    .container-login h1{
+        font-size: 40px;
+    }
 }
 

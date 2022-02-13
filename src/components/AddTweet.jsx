@@ -19,7 +19,6 @@ const AddTweet = () => {
                 placeholder="What's happening?"
                 onChange={handleChange}></textarea>
                 <div className="progressbar">
-                    {/* <span>progressbar</span> */}
                     <ProgressBar now={textLength} min={0} max={200}/>
                     <div className="characters-used">
                         <p className="izq">{textLength}</p> 

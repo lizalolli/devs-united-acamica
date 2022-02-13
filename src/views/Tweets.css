@@ -47,6 +47,7 @@
     font-family: 'Press Start 2P', cursive;
     padding:10px 20px; 
     font-size: 20px; 
+    color:#150714;
 }
 
 .container-post-tweet .send-tweet button:hover{
@@ -158,5 +159,9 @@ border-radius: 0px 0px 0px 5px;
 
     .container-tweets-nav {
         width: 90% !important;
+    }
+
+    .container-post-tweet .send-tweet button.post{
+        margin-top:10px;
     }
 }
