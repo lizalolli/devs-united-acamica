@@ -1,0 +1,77 @@
+.container-login{
+    width:80%;
+    height:100vh;
+    margin: 0 auto;
+}
+
+.container-login h1{
+    margin-bottom: 37px;
+}
+
+.container-login h5{
+    margin-bottom: 37px;
+    width: 80%;
+}
+
+.container-login .content-login button.btn-login{
+    background-color: #4285F4;
+    border-radius: 3px;
+    border:none;
+    padding: 3px 40px 3px 3px;
+    color:#fff;
+    margin-bottom:165px;
+}
+
+.container-login .content-login button.btn-login img{
+    background-color: #fff;
+    padding: 5px;
+    margin-right: 40px;
+}
+
+.container-login .content-login p{
+    color:#60265B;
+    font-size:18px;
+}
+
+.container-login .content-login p span {
+    color:#F50D5A;
+}
+
+.img-login img{
+    float: right;
+    padding-right: 20px;
+}
+
+.content-login{
+    padding-left: 20px;
+}
+
+ .img-login, .content-login{
+    margin-top:30vh;
+} 
+
+@media screen and (max-width: 998px){
+    .img-login, .content-login{
+        margin-top:10vh;
+        text-align: center;
+    }
+
+    .container-login h5 {
+        width:unset;
+    }
+
+    .img-login img{
+        float: unset;
+        padding-right:0px !important;
+        width: 70%;
+    }
+    
+    .content-login{
+        padding-left:0px !important;
+    }
+
+    .container-login h1{
+        font-size: 40px;
+    }
+}
+
