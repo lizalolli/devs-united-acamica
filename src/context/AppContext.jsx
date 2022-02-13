@@ -92,16 +92,19 @@ const AppProvider = ({ children }) => {
     setTextLength(e.target.value.length);
   };
 
+  const resetProgress = 0;
+
   //envía el tweet
   const sendTweet = (e) => {
     e.preventDefault();
     firestore.collection("tweetsColection").add(tweetFromApp);
     setTweetFromApp({ ...tweetFromApp, tweet: "" });
+    setTextLength(resetProgress);
   }
 
   //borra el tweet
   const deleteTweet = (id) => {
-    var answer = window.confirm("Estás a punto de eliminar este tweeet, ¿deseas continuar?");
+    var answer = window.confirm("Estás a punto de eliminar este tweet, ¿deseas continuar?");
     if (answer) {
     firestore.doc(`tweetsColection/${id}`)
       .delete()
