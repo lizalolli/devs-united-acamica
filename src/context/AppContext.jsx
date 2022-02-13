@@ -101,7 +101,7 @@ const AppProvider = ({ children }) => {
 
   //borra el tweet
   const deleteTweet = (id) => {
-    var answer = window.confirm("Estás a punto de eliminar este tweeet, ¿deseas continuar?");
+    var answer = window.confirm("Estás a punto de eliminar este tweet, ¿deseas continuar?");
     if (answer) {
     firestore.doc(`tweetsColection/${id}`)
       .delete()
