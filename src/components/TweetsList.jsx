@@ -23,7 +23,7 @@ const TweetsList = () => {
                             {showLike(tweet.likedBy, tweet.id, tweet.likes)}
                         </div>
                     </div>
-                )
+                )    
             })}
         </div>
     )
